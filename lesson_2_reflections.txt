@@ -1,13 +1,26 @@
-﻿What happens when you initialize a repository? Why do you need to do it?
+﻿1. What happens when you initialize a repository? Why do you need to do it?
 
-How is the staging area different from the working directory and the repository?
-What value do you think it offers?
+>  This command creates an empty Git repository - basically a ".git" directory with subdirectories for objects, refs/heads, refs/tags, and template files. An initial HEAD file that references the HEAD of the master branch is also created.
 
-How can you use the staging area to make sure you have one commit per logical
-change?
 
-What are some situations when branches would be helpful in keeping your history
-organized? How would branches help?
+2. How is the staging area different from the working directory and the repository?
+
+> The Git index is used as a staging area between our working directory and our repository. Whenever we make a commit we send the file to the staging state. So, a temp area that 'git add' is placed into is git staging area (or cached, index).
+
+
+3. What value do you think it offers?
+
+> One of the biggest advantage git staging area offers is that we can double check our files before making a commit. And after reviewing we can finally make a commit. While the file is in staging area we can check the difference between the context of the file using "git diff" command. Also we can use "git add -p" to control which lines we want to commit.
+
+
+4. How can you use the staging area to make sure you have one commit per logical change?
+
+> To do this we simply need to use 'git add' for each logical change we do and then committing them using 'git commit -m "message" '. But if if we make several changes to different files or same file and add them to staging area, then 1 commit will be created for all the changes done so far(the files that were added to staging area). This will make it difficult for us to restore change to any particular file.
+
+
+5. What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+>
 
 How do the diagrams help you visualize the branch structure?
 
